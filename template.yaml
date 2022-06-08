@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  descrição
+
+Globals:
+  Function:
+    Timeout: 180
+
+Resources:
+  FaceDetectionFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.app
+      CodeUri: face_detection/
+      Runtime: python3.8
+      Events:
+        ProcessImage:
+          Type: Api
+          Properties:
+            Path: /process-image
+            Method: post
+
+Outputs:
+  FaceDetectionApi:
+    Description: ""
+    Value: !Sub
+  FaceDetectionFunction:
+    Description: ""
+    Value: !GetAtt FaceDetectionFunction.Arn
