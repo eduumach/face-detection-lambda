@@ -27,7 +27,7 @@ def face_detect(file):
     file_bytes = np.asarray(bytearray(image), dtype=np.uint8)
     img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
 
-    faceCascade = cv2.CascadeClassifier('face_detection/haarcascade_frontalface_alt.xml')
+    faceCascade = cv2.CascadeClassifier('./haarcascade_frontalface_alt.xml')
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

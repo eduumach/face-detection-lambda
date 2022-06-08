@@ -24,7 +24,6 @@ Resources:
     Metadata:
       Dockerfile: Dockerfile
       DockerContext: ./face_detection
-      DockerTag: python3.8
 
 Outputs:
   FaceDetectionApi:
