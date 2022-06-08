@@ -11,15 +11,20 @@ Resources:
   FaceDetectionFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: app.app
-      CodeUri: face_detection/
-      Runtime: python3.8
+      PackageType: Image
+#      Handler: app.app
+#      CodeUri: face_detection/
+#      Runtime: python3.8
       Events:
         ProcessImage:
           Type: Api
           Properties:
             Path: /process-image
             Method: post
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./face_detection
+      DockerTag: python3.8
 
 Outputs:
   FaceDetectionApi:

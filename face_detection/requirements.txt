@@ -4,5 +4,4 @@ flask
 werkzeug==2.0.3
 opencv_python
 numpy
-Pillow
-opencv-python-headless
+serverless-wsgi
