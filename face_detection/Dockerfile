@@ -12,20 +12,3 @@ RUN python3.8 -m pip install awslambdaric
 ENTRYPOINT [ "python3.8", "-m", "awslambdaric" ]
 CMD [ "app.app" ]
 
-
-
-
-
-
-#
-#
-#RUN python3.8 -m pip install -r requirements.txt -t .
-#
-##ADD https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie /usr/bin/aws-lambda-rie
-##RUN chmod 755 /usr/bin/aws-lambda-rie
-##COPY a.sh ./
-##RUN chmod +x a.sh
-#
-##ENTRYPOINT [ "./a.sh" ]
-##CMD [ "wsgi_handler.handler" ]
-#CMD ["app.app"]
