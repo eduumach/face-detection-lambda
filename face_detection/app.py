@@ -4,6 +4,7 @@ from flask_lambda import FlaskLambda
 import base64
 import numpy as np
 import cv2
+import utils
 
 app = FlaskLambda(__name__)
 
@@ -23,13 +24,11 @@ def process_image():
 
 def face_detect(file):
 
-    image = base64.b64decode(file)
-    file_bytes = np.asarray(bytearray(image), dtype=np.uint8)
-    img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+    image = utils.decode(file)
 
     faceCascade = cv2.CascadeClassifier('./haarcascade_frontalface_alt.xml')
 
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     faces = faceCascade.detectMultiScale(
         gray,
@@ -40,7 +39,7 @@ def face_detect(file):
     )
 
     for (x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-    image = cv2.imencode('.jpg', img)[1]
-    return {"image": str(base64.b64encode(image).decode('utf-8', 'strict'))}
+    image_base64 = utils.encode(image)
+    return {"image": image_base64}
