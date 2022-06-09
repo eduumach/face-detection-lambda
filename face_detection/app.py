@@ -1,8 +1,6 @@
 
 from flask import request
 from flask_lambda import FlaskLambda
-import base64
-import numpy as np
 import cv2
 import utils
 

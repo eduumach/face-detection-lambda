@@ -4,4 +4,3 @@ flask
 werkzeug==2.0.3
 opencv_python
 numpy
-serverless-wsgi
