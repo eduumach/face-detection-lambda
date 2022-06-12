@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  descrição
+  
 
 Globals:
   Function:
@@ -12,14 +12,11 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       PackageType: Image
-#      Handler: app.app
-#      CodeUri: face_detection/
-#      Runtime: python3.8
       Events:
         ProcessImage:
           Type: Api
           Properties:
-            Path: /process-image
+            Path: /face_detection
             Method: post
     Metadata:
       Dockerfile: Dockerfile
