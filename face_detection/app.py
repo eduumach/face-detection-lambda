@@ -7,7 +7,7 @@ import utils
 app = FlaskLambda(__name__)
 
 
-@app.route("/face_detection", methods=["POST"])
+@app.route("/face-detection", methods=["POST"])
 def process_image():
     img = request.json["image"]
 
