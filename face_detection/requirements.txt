@@ -1,6 +1,6 @@
-requests
-flask-lambda-python36
-flask
+requests== 2.27.1
+flask-lambda-python36==0.1.0
+Flask==2.0.3
 werkzeug==2.0.3
 opencv_python
-numpy
+numpy==1.22.0

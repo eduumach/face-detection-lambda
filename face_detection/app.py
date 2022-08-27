@@ -25,14 +25,14 @@ def face_detect(file):
     image = utils.decode(file)
 
     faceCascade = cv2.CascadeClassifier('./haarcascade_frontalface_alt.xml')
-
+        
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     faces = faceCascade.detectMultiScale(
         gray,
         scaleFactor=1.08,
         minNeighbors=4,
-        minSize=(45, 90),
+        minSize=(30, 30),
         maxSize=(250, 650)
     )
 
