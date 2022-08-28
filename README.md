@@ -21,7 +21,7 @@ aws configure
 Whit aws configure you to set up login AWS and credentials. This is [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
 ```shell
-sam buil
+sam build
 ```
 
 With this command, you will builder project.
